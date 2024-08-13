@@ -9,7 +9,7 @@ function App() {
     <>
     <MainContainer>
     <NavigationBar />
-      
+     
     </MainContainer>
   </>
   )
