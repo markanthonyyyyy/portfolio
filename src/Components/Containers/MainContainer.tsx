@@ -6,7 +6,7 @@ interface MainContainerProps {
 const MainContainer = (props: MainContainerProps) => {
   return (
     <>
-        <div className="bg-zinc-800 h-screen relative">
+        <div className="bg-zinc-800 h-screen">
           {props.children}
         </div> 
     </>
