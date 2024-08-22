@@ -32,6 +32,18 @@ const NavigationBar = () => {
 
     }, [lastScrollY])
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+            }else{
+                setIsMenuOpen(false);    
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const NavItems = [
         {
             title: "Home"
