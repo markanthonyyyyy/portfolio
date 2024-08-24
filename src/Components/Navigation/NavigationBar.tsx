@@ -5,7 +5,8 @@ const NavigationBar = () => {
     const [showNavigation, setShowNavigation] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    const [selected, setSelected] = useState('');
+ 
     const handleScroll = () => {
         const currentScrollY = window.scrollY;
         if (currentScrollY > lastScrollY) {
@@ -22,6 +23,10 @@ const NavigationBar = () => {
 
     const handleMenuClick = () => {
         setIsMenuOpen(!isMenuOpen);
+    }
+
+    const handleSelected = (selected : string) => {
+        setSelected(selected);
     }
 
     useEffect(() => {
@@ -49,10 +54,10 @@ const NavigationBar = () => {
             title: "Home"
         },
         {
-            title: "Service"
+            title: "Services"
         },
         {
-            title: "Project"
+            title: "Projects"
         },
         {
             title: "About"
@@ -68,14 +73,14 @@ const NavigationBar = () => {
                     <span className="ml-1 text-blue-500 font-nunito-sans font-bold transition-all duration-500 ease-in-out md:text-2xl">Dev</span>
                 </div>
                 <div className="w-1/2 flex justify-end items-center  transition-all duration-500 ease-in-out">
-                    <nav className="opacity-0 md:opacity-100 transition-opacity duration-500 ease-in- flex items-center">
+                    <nav className="opacity-0 md:opacity-100 transition-opacity duration-500 ease-in flex items-center">
                         <ul className="flex space-x-14 items-center">
                             {NavItems && NavItems.map((item, index) => (
-                                <li key={index} className="text-xs text-white font-nunito-sans font-medium transition-all duration-500 ease-in-out md:text-base hover:text-blue-500 hover:scale-105">
-                                    <a href="/">{item.title}</a>
+                                <li key={index} className={`text-xs ${selected == item.title ? 'text-blue-500' : 'text-white'} font-nunito-sans font-bold transition-all duration-500 ease-in-out md:text-base hover:text-blue-500 hover:scale-105`} onClick={() => {handleSelected(item.title)}}>
+                                    <a href="#">{item.title}</a>
                                 </li>
                             ))}
-                            <NavButton name="Contact Me" />
+                            <NavButton name="Contact Me" onClick={()=>{handleSelected('Contact')}} />
                         </ul>
                         
                     </nav>
@@ -84,8 +89,44 @@ const NavigationBar = () => {
                 <div>
                     <img src="/Images/Navigation/menu-logo.png" className={`${isMenuOpen && 'rotate-[360deg]'} duration-500 block w-5 h-auto object-contain md:hidden z-20 absolute top-[1.1rem] right-4`} onClick={handleMenuClick} />
                 </div>
-                <div className={`bg-zinc-700 w-60  h-60 z-10 absolute transition-transform duration-500 ${isMenuOpen ? 'translate-x-0 translate-y-0' : 'translate-x-full -translate-y-full'} right-0 top-0 rounded-bl-full `}>
-
+                <div className={`bg-zinc-700 w-60  h-60 z-10 absolute transition-transform duration-500 ${isMenuOpen ? 'translate-x-0 translate-y-0' : 'translate-x-full -translate-y-full'} right-0 top-0 rounded-bl-full`}>
+                    <div className="h-full relative">
+                        <div className={`w-12 h-auto absolute top-[3%] left-[14%] flex items-center justify-center transition-scale duration-500 ${isMenuOpen ? 'scale-100 delay-300' : 'scale-0'}`}>
+                            <div className="rounded-full w-11 h-11 flex items-center justify-center scale-100 transition-scale duration-500 hover:scale-110">
+                                <div className={`bg-blue-500 p-3 w-10 h-auto rounded-full ${selected == 'Home' ? 'border-2' : ''}`} onClick={() => {handleSelected('Home')}}>
+                                    <img src="/Images/Navigation/home-icon.png" className="w-5 h-auto object-contain"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`w-12 h-auto absolute top-[26%] left-[22%] flex items-center justify-center transition-scale duration-500 ${isMenuOpen ? 'scale-100 delay-[400ms]' : 'scale-0'}`}>
+                            <div className="rounded-full w-11 h-11 flex items-center justify-center scale-100 transition-scale duration-500 hover:scale-110">
+                                <div className={`bg-blue-500 p-3 w-10 h-auto rounded-full ${selected == 'Services' ? 'border-2' : ''}`} onClick={() => {handleSelected('Services')}}>
+                                    <img src="/Images/Navigation/services-icon.png" className="w-5 h-auto object-contain"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`w-12 h-auto absolute top-[45%] left-[36%] flex items-center justify-center transition-scale duration-500 ${isMenuOpen ? 'scale-100 delay-500' : 'scale-0'}`}>
+                            <div className="rounded-full w-11 h-11 flex items-center justify-center scale-100 transition-scale duration-500 hover:scale-110">
+                                <div className={`bg-blue-500 p-3 w-10 h-auto rounded-full ${selected == 'Projects' ? 'border-2' : ''}`} onClick={() => {handleSelected('Projects')}}>
+                                    <img src="/Images/Navigation/projects-icon.png" className="w-5 h-auto object-contain"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`w-12 h-auto absolute top-[60%] left-[56%] flex items-center justify-center transition-scale duration-500 ${isMenuOpen ? 'scale-100 delay-[600ms]' : 'scale-0'}`}>
+                            <div className="rounded-full w-11 h-11 flex items-center justify-center scale-100 transition-scale duration-500 hover:scale-110">
+                                <div className={`bg-blue-500 p-3 w-10 h-auto rounded-full ${selected == 'About' ? 'border-2' : ''}`} onClick={() => {handleSelected('About')}}>
+                                    <img src="/Images/Navigation/about-icon.png" className="w-5 h-auto object-contain"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`w-12 h-auto absolute top-[67%] left-[78%] flex items-center justify-center transition-scale duration-500 ${isMenuOpen ? 'scale-100 delay-700' : 'scale-0'}`}>
+                            <div className="rounded-full w-11 h-11 flex items-center justify-center scale-100 transition-scale duration-500 hover:scale-110">
+                                <div className={`bg-blue-500 p-3 w-10 h-auto rounded-full ${selected == 'Contact' ? 'border-2' : ''}`} onClick={() => {handleSelected('Contact')}}>
+                                    <img src="/Images/Navigation/phone-icon.png" className="w-5 h-auto object-contain"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>                
             </div>
             
