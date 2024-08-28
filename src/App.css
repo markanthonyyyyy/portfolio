@@ -1,8 +1,13 @@
+*{
+    /* scroll-behavior: smooth; */
+    padding: 0;
+    margin: 0;
+}
 ::-webkit-scrollbar {
     width: 0px;
     height: 7px;
     }
-/* ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: #f1f1f1; 
 }
 
@@ -13,4 +18,4 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
-} */
+}

@@ -6,7 +6,7 @@ interface ContentContainerProps {
 
 const ContentContainer = (props: ContentContainerProps) => {
   return (
-    <div className='bg-zinc-800 h-screen'>{props.children}</div>
+    <div className='bg-zinc-800 h-screen text-white' >{props.children}</div>
   )
 }
 
