@@ -138,7 +138,7 @@ const NavigationBar = () => {
                                     {item.title}
                                 </li>
                             ))}
-                            <NavButton name="Contact Me" onClick={()=>{handleSelected('Contact'); handleNavItemClicked('Contact');}} />
+                            <NavButton name="Contact" onClick={()=>{handleSelected('Contact'); handleNavItemClicked('Contact');}} />
                         </ul>
                     </nav>
                 </div>
