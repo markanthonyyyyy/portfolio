@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Lottie from 'lottie-react';
+import animationData from './../../../public/Animations/coffee-animation.json'
 
 const ContactScreen = () => {
 
@@ -9,10 +11,13 @@ const ContactScreen = () => {
       duration: 1000,
     });
   }, []);
+
+
   return (
     <section id="Connect" className="w-full h-full bg-zinc-800 p-10 ">
       <p className="font-nunito-sans text-white text-4xl font-bold" data-aos="fade-right">Let's <span className="text-blue-500">Connect</span></p>
       <div className="w-full h-full flex">
+          {/* Container 1 */}
           <div className="w-3/5 h-auto p-10">
             <div data-aos="fade-right" data-aos-delay="500" className="w-full h-5/6 bg-black-gradient border border-zinc-700 rounded-xl py-5 pl-12 pr-16 relative">
               <div className="absolute left-6 top-1/2 transform -translate-y-1/2 h-28 border-l-4 rounded-lg border-gray-300"></div>
@@ -52,9 +57,15 @@ const ContactScreen = () => {
               </div>
             </div>
           </div>
-          
-          <div className="border-2 border-red-500 w-2/5 h-auto">
-
+          {/* Container 2 */}
+          <div className="w-2/5 h-auto p-10 flex flex-col items-center justify-center" data-aos="fade-left" data-aos-delay="700">
+            <div className='relative w-80 h-80'>
+              <img src='/Images/Connect/coffee-qr-icon.png' className={`w-80 h-80 object-contain mr-3`}/>
+              <div className='absolute -left-8 -bottom-4'>
+                <Lottie animationData={animationData} loop={true} style={{height: 150, width: 150}}/>
+              </div>
+            </div>
+            <p className='font-nunito-sans mt-10 text-2xl font-bold'>Buy me <span className='text-blue-500'>Coffee</span> :)</p>
           </div>
       </div>
 
