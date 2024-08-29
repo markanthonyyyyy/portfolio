@@ -15,7 +15,7 @@ const ContactScreen = () => {
 
   return (
     <section id="Connect" className="w-full h-full bg-zinc-800 p-10 ">
-      <p className="font-nunito-sans text-white text-4xl font-bold" data-aos="fade-right">Let's <span className="text-blue-500">Connect</span></p>
+      <p className="font-nunito-sans text-white text-4xl font-bold text-center mb-5" data-aos="fade-right">Let's <span className="text-blue-500">Connect</span></p>
       <div className="w-full h-full flex">
           {/* Container 1 */}
           <div className="w-3/5 h-auto p-10" data-aos="fade-right" data-aos-delay="500">
