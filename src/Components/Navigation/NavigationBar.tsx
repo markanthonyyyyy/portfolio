@@ -48,7 +48,6 @@ const NavigationBar = () => {
             if (top >= ScrollOffset && top < ScrollOffset + height && id) {
                 setSelected(id);
                 setTitle('Ally Dev | ' + id)
-                console.log(id);
             }
 
         })

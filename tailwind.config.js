@@ -16,6 +16,8 @@ export default {
               "linear-gradient(to bottom, #060505, #787575)",
           "radial-gradient-gray":
               "radial-gradient(circle, #27272a, #191717)",
+          "radial-gradient-blue":
+              "radial-gradient(circle, #3b82f6, #2a54b2)",
       },
     },
   },
