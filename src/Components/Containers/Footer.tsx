@@ -48,7 +48,7 @@ const Footer = () => {
                     <div className="mt-4 font-nunito-sans text-white text-sm md:text-base">Thank you for visiting my website! I appreciate you taking the time to explore my work. If you have any questions or would like to collaborate on a project, feel free to reach out. Let's stay connected!</div>
                     <div className="flex items-center mt-5"> 
                         <img src="/Images/Footer/email-icon.png" className={`w-6 md:w-8 h-auto object-contain mr-2`}/>
-                        <span className="text-white font-nunito-sans text-sm md:text-base">allydev@example.com</span>
+                        <span className="text-white font-nunito-sans text-sm md:text-base">aguilar.markanthony.b.5340@gmail.com</span>
                     </div>
                 </div>
                 <div className="h-auto w-full md:w-3/5 md:border-l border-zinc-500  p-5 flex justify-between flex-col md:my-4 flex-wrap md:flex-row">
