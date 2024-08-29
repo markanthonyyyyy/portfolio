@@ -1,5 +1,6 @@
 import './App.css'
 import ContentContainer from './Components/Containers/ContentContainer'
+import Footer from './Components/Containers/Footer'
 import MainContainer from './Components/Containers/MainContainer'
 import NavigationBar from './Components/Navigation/NavigationBar'
 import AboutScreen from './Components/Screens/AboutScreen'
@@ -12,23 +13,24 @@ function App() {
 
   return (
     <>
-    <MainContainer>
     <NavigationBar />
-        <ContentContainer>
-          <HomeScreen/>
-        </ContentContainer>
-        <ContentContainer>
-          <ServicesScreen/>
-        </ContentContainer>
-        <ContentContainer>
-          <ProjectsScreen/>
-        </ContentContainer>
-        <ContentContainer>
-          <AboutScreen/>
-        </ContentContainer>
-        <ContentContainer>
-          <ContactScreen/>
-        </ContentContainer>
+    <MainContainer>
+      <ContentContainer>
+        <HomeScreen/>
+      </ContentContainer>
+      <ContentContainer>
+        <ServicesScreen/>
+      </ContentContainer>
+      <ContentContainer>
+        <ProjectsScreen/>
+      </ContentContainer>
+      <ContentContainer>
+        <AboutScreen/>
+      </ContentContainer>
+      <ContentContainer>
+        <ContactScreen/>
+      </ContentContainer>
+      <Footer/>
     </MainContainer>
   </>
   )

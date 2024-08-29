@@ -124,7 +124,7 @@ const NavigationBar = () => {
 
     return (
         <>
-            <div className={`flex h-14 px-5 py-5 border-b w-full items-center border-zinc-700 bg-zinc-800 fixed top-0 z-10 transition-transform duration-500 md:h-20 md:px-10 ${showNavigation ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
+            <div className={`flex h-14 px-5 py-5 border-b w-full items-center border-zinc-700 bg-radial-gradient-gray fixed top-0 z-10 transition-transform duration-500 md:h-20 md:px-10 ${showNavigation ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
                 <div className="w-1/2 flex items-center transition-all duration-500 ease-in-out">
                     <img src="/Images/Navigation/sample-logo.png" className="w-5 h-auto object-contain scale-100 transition-scale duration-500 cursor-pointer  hover:scale-125 md:w-10" onClick={() => {handleSelected('Home'); handleNavItemClicked('Home');}}/>
                     <span className="ml-2 text-white font-nunito-sans font-bold transition-all duration-500 ease-in-out md:ml-5 md:text-2xl">Ally</span>
@@ -138,7 +138,7 @@ const NavigationBar = () => {
                                     {item.title}
                                 </li>
                             ))}
-                            <NavButton name="Contact" onClick={()=>{handleSelected('Contact'); handleNavItemClicked('Contact');}} />
+                            <NavButton name="Connect" onClick={()=>{handleSelected('Contact'); handleNavItemClicked('Contact');}} />
                         </ul>
                     </nav>
                 </div>
