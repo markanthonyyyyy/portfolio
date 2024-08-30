@@ -27,9 +27,8 @@ function App() {
       <ContentContainer>
         <AboutScreen/>
       </ContentContainer>
-      <ContentContainer>
-        <ContactScreen/>
-      </ContentContainer>
+ 
+      <ContactScreen/>
       <Footer/>
     </MainContainer>
   </>
