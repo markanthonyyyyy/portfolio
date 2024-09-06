@@ -4,6 +4,8 @@ import 'aos/dist/aos.css';
 import Lottie from 'lottie-react';
 import animationData from './../../../public/Animations/coffee-animation.json'
 import animationData2 from './../../../public/Animations/email-sent-animation.json'
+import animationData3 from './../../../public/Animations/cloud-white-animation.json'
+import animationData4 from './../../../public/Animations/scan-qr-animation.json'
 import { useForm } from 'react-hook-form';
 import emailJs from '@emailjs/browser';
 
@@ -158,10 +160,16 @@ const ContactScreen = () => {
           )}
           {/* Container 2 */}
           <div className="w-full md:w-2/5 h-auto p-10 flex flex-col items-center justify-center" data-aos={`${isMobile ? 'fade-right' : 'fade-left'}`} data-aos-delay="500">
-            <div className='relative w-52 h-52 md:w-80 md:h-80'>
+            <div className='relative w-52 h-52 md:w-80 md:h-80 ml-12'>
               <img src='/Images/Connect/coffee-qr-icon.png' className={`w-52 h-52 md:w-80 md:h-80 object-contain mr-3`}/>
               <div className='absolute -left-3 -bottom-2 md:-left-8 md:-bottom-4'>
                 <Lottie animationData={animationData} loop={true} style={{height: isMobile ? 90 : 150, width: isMobile ? 90 : 150}}/>
+              </div>
+              <div className='absolute -left-20 top-16 md:-left-44 md:top-16'>
+                <Lottie animationData={animationData3} loop={true} style={{height: isMobile ? 90 : 180, width: isMobile ? 90 : 180}}/>
+              </div>
+              <div className='absolute -left-[60px] top-[90px] md:-left-[135px] md:top-28'>
+                <Lottie animationData={animationData4} loop={true} style={{height: isMobile ? 40 : 80, width: isMobile ? 40 : 80}}/>
               </div>
             </div>
             <p className='font-nunito-sans mt-7 md:mt-10 text-xl md:text-2xl font-bold'>Buy me <span className='text-blue-500'>Coffee</span> :)</p>
