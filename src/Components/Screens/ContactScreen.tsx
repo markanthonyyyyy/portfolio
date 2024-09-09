@@ -63,8 +63,8 @@ const ContactScreen = () => {
 
 
   return (
-    <section id="Connect" className="w-full h-full bg-zinc-800 p-5 md:p-10 text-white">
-      <p className="font-nunito-sans text-white text-2xl md:text-4xl font-bold text-center mb-2md:mb-5" data-aos="fade-right">Let's <span className="text-blue-500">Connect</span></p>
+    <section id="Connect" className="w-full h-full bg-zinc-800 p-5 md:p-10 text-white overflow-hidden">
+      <p className="font-nunito-sans text-white text-2xl md:text-4xl font-bold text-center mb-2 md:mb-5" data-aos="fade-right">Let's <span className="text-blue-500">Connect</span></p>
       <div className="w-full h-full flex flex-col md:flex-row">
           {/* Container 1 */}
           {isMobile ? 
@@ -75,25 +75,33 @@ const ContactScreen = () => {
                 <div className="absolute bottom-3.5 left-1/2 transform -translate-x-1/2 border-gray-300">
                   <div className='w-7 h-7 bg-white rounded-full'></div>
                 </div>
-                  <div className='bg-white w-full h-full p-5'>
-                    <div className='flex items-center mb-5'>
-                      <img src='/Images/Connect/message-icon.png' className={`w-6 md:w-8 h-auto object-contain mr-3`}/>
-                      <p className='font-nunito-sans text-sm text-blue-500 font-bold' data-aos-delay="700">Send a Message</p>
+                <form ref={form} onSubmit={handleSubmit(onSubmit)}>
+                {isSent ? (
+                    <div className='text-black w-full h-[23.5rem] bg-white flex items-center justify-center'>
+                      <Lottie animationData={animationData2} loop={false} style={{height: 120, width: 120}}/>
                     </div>
-                    <input type="text" className='text-sm mb-2 w-full p-2 border-2 border-blue-500 text-black outline-none' placeholder='Name'/>
-                    <input type="email" className='text-sm mb-2 w-full p-2 border-2 border-blue-500 text-black outline-none' placeholder='Email'/>
-                    <div className='flex space-x-2 mb-2'>
-                      <input type="text" className='text-sm w-full p-2 border-2 border-blue-500 text-black outline-none' placeholder='Subject'/>
-                    </div>
-                    <textarea placeholder="Your Message" className="text-sm border-2 border-blue-500 appearance-none mb-3  w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-28 resize-none"></textarea>
-                    <div className='flex items-center justify-between'>
-                      <button className="text-xs text-white whitespace-nowrap font-nunito-sans px-3 py-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-center md:text-sm md:px-5 md:py-2.5">Send Message</button>
-                      <div className='flex items-center '>
-                        <img src='/Images/Connect/ph-icon.png' className={`w-4 md:w-6 h-auto object-contain mr-1`}/>
-                        <p className='font-nunito-sans text-sm text-blue-500 font-bold'>PH</p>
+                  ) : (
+                    <div className='bg-white w-full h-[23.5rem] p-5'>
+                      <div className='flex items-center mb-5'>
+                        <img src='/Images/Connect/message-icon.png' className={`w-6 md:w-8 h-auto object-contain mr-3`}/>
+                        <p className='font-nunito-sans text-sm text-blue-500 font-bold' data-aos-delay="700">Send a Message</p>
+                      </div>
+                      <input id="sender_name" {...register('sender_name', { required: 'Name is required' })} type="text" className={`text-xs mb-2 w-full p-2 border-2 ${errors.sender_name ? 'border-red-500' : 'border-blue-500'} text-black outline-none`} placeholder={errors.sender_name ? `${errors.sender_name?.message}` : 'Name'}/>
+                      <input id="sender_email" {...register('sender_email', { required: 'Email is required', pattern: { value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/, message: 'Email is not valid'}})} type="email" className={`text-xs mb-2 w-full p-2 border-2 ${errors.sender_email ? 'border-red-500' : 'border-blue-500'} text-black outline-none`} placeholder={errors.sender_email ? `${errors.sender_email?.message}` : 'Email'}/>
+                      <div className='flex space-x-2 mb-2'>
+                        <input id="subject" {...register('subject', { required: 'Subject is required' })} type="text" className={`text-xs w-full p-2 border-2 ${errors.subject ? 'border-red-500' : 'border-blue-500'} text-black outline-none`} placeholder={errors.subject ? `${errors.subject?.message}` : 'Subject'}/>
+                      </div>
+                      <textarea id='message' {...register('message', { required: 'Message is required' })} placeholder={errors.message ? `${errors.message?.message}` : 'Your Message'} className={`text-xs border-2 ${errors.message ? 'border-red-500' : 'border-blue-500'} appearance-none mb-3  w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-28 resize-none`}></textarea>
+                      <div className='flex items-center justify-between'>
+                        <button type='submit' className="text-xs text-white whitespace-nowrap font-nunito-sans px-3 py-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-center md:text-sm md:px-5 md:py-2.5" disabled={loading}>{loading ? 'Sending...' : 'Send Message'}</button>
+                        <div className='flex items-center '>
+                          <img src='/Images/Connect/ph-icon.png' className={`w-4 md:w-6 h-auto object-contain mr-1`}/>
+                          <p className='font-nunito-sans text-sm text-blue-500 font-bold'>PH</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
+                </form>
                 </div>
                 <div className='flex flex-col items-center mt-10 gap-y-3'>
                 <div className='flex items-center'>
@@ -135,7 +143,7 @@ const ContactScreen = () => {
                         </div>
                         <textarea id='message' {...register('message', { required: 'Message is required' })} placeholder={errors.message ? `${errors.message?.message}` : 'Your Message'} className={`border-2 ${errors.message ? 'border-red-500' : 'border-blue-500'} appearance-none mb-3  w-full p-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-40 resize-none`}></textarea>
                         <div className='flex items-center justify-between'>
-                          <button type='submit' className="text-xs text-white whitespace-nowrap font-nunito-sans px-3 py-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-center scale-0 transition-scale duration-500 md:scale-100 md:text-sm md:px-5 md:py-2.5">{loading ? 'Sending...' : 'Send Message'}</button>
+                          <button type='submit' className="text-xs text-white whitespace-nowrap font-nunito-sans px-3 py-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-center scale-0 transition-scale duration-500 md:scale-100 md:text-sm md:px-5 md:py-2.5" disabled={loading}>{loading ? 'Sending...' : 'Send Message'}</button>
                           <div className='flex items-center'>
                             <img src='/Images/Connect/ph-icon.png' className={`w-4 md:w-6 h-auto object-contain mr-3`}/>
                             <p className='font-nunito-sans text-blue-500 font-bold'>Philippines</p>

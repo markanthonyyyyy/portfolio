@@ -24,10 +24,8 @@ function App() {
       <ContentContainer>
         <ProjectsScreen/>
       </ContentContainer>
-      <ContentContainer>
-        <AboutScreen/>
-      </ContentContainer>
- 
+      
+      <AboutScreen/>
       <ContactScreen/>
       <Footer/>
     </MainContainer>
