@@ -5,7 +5,7 @@ const AboutScreen = () => {
 
 
   return (
-    <section id='About' className="text-white w-full bg-zinc-800 p-5 md:py-14 md:px-28  flex flex-col h-full">
+    <section id='About' className="text-white w-full bg-zinc-800 p-5 pb-28 md:pb-32 md:py-16 md:px-28  flex flex-col h-full">
       <p className="font-nunito-sans text-white text-2xl font-bold mb-6 text-center md:text-4xl md:mb-14">About <span className="text-blue-500">Me</span></p>
       <div className=" flex flex-col md:flex-row justify-center items-center">
         {/* IMAGE */}
@@ -21,34 +21,34 @@ const AboutScreen = () => {
           </p>
           <div className="flex py-4 font-nunito-sans ">
             <div className="flex-1 flex items-center">
-              <img src="/Images/About/digits-icon.png" className="w-12 h-12 mr-5" alt="Digits" />
+              <img src="/Images/About/digits-icon.png" className="w-10 h-10 md:w-12 md:h-12 mr-5" alt="Digits" />
               <div>
-                <p className="text-xl font-bold mb-2">Digits Trading Corporation</p>
-                <p>Associate Software Developer</p>
+                <p className="text-sm md:text-xl font-bold mb-2">Digits Trading Corporation</p>
+                <p className="text-xs md:text-base">Associate Software Developer</p>
               </div>
             </div>
             <div className="flex-1 flex items-center justify-end">
-              <p className="text-xl font-bold">2023 - Present</p>
+              <p className="text-sm md:text-xl font-bold">2023 - Present</p>
             </div>
           </div>
           <div className="flex py-4 font-nunito-sans border-t">
             <div className="flex-1 flex items-center">
-              <div className="w-12 h-12 mr-5">
-                <img src="/Images/About/accenture-icon.png" className="w-14 h-14" alt="Accenture" />
+              <div className="w-10 h-10 md:w-12 md:h-12 mr-5">
+                <img src="/Images/About/accenture-icon.png" className="w-12 h-12 md:w-14 md:h-14" alt="Accenture" />
               </div>
               <div>
-                <p className="text-xl font-bold mb-2">Accenture</p>
-                <p>Student | Intern</p>
+                <p className="text-sm md:text-xl font-bold mb-2">Accenture</p>
+                <p className="text-xs md:text-base">Student | Intern</p>
               </div>
             </div>
             <div className="flex-1 flex items-center justify-end">
-              <p className="text-xl font-bold">2023</p>
+              <p className="text-sm md:text-xl font-bold">2023</p>
             </div>
           </div>
           {/* SKILLS CONTAINER */}
           <div className="mt-10 flex flex-wrap gap-2">
             {Skills.map((item, index) => (
-              <div key={index} className="text-blue-300 font-semibold border-2 border-blue-300 w-fit py-2 px-3 rounded-lg">
+              <div key={index} className="text-blue-300 font-semibold border md:border-2 text-sm md:text-base border-blue-300 w-fit py-2 px-3 rounded-lg">
                   {item}
               </div>
             ) )}
