@@ -182,7 +182,7 @@ const NavigationBar = () => {
                         </div>
                         <div className={`cursor-pointer w-12 h-auto absolute top-[67%] left-[78%] flex items-center justify-center transition-scale duration-500 ${isMenuOpen ? 'scale-100 delay-700' : 'scale-0'}`}>
                             <div className="rounded-full w-11 h-11 flex items-center justify-center scale-100 transition-scale duration-500 hover:scale-110">
-                                <div className={`bg-blue-500 p-3 w-10 h-auto rounded-full ${selected == 'Contact' ? 'border-2' : ''}`} onClick={() => {handleSelected('Connect'); handleNavItemClicked('Connect');}}>
+                                <div className={`bg-blue-500 p-3 w-10 h-auto rounded-full ${selected == 'Connect' ? 'border-2' : ''}`} onClick={() => {handleSelected('Connect'); handleNavItemClicked('Connect');}}>
                                     <img src="/Images/Navigation/phone-icon.png" className="w-5 h-auto object-contain"/>
                                 </div>
                             </div>
