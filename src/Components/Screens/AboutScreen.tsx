@@ -5,18 +5,18 @@ const AboutScreen = () => {
 
 
   return (
-    <section id='About' className="text-white w-full bg-zinc-800 p-5 md:py-14 md:px-28  flex flex-col h-screen">
-      <p className="font-nunito-sans text-white text-2xl md:text-4xl font-bold  mb-2 md:mb-14 text-center">About <span className="text-blue-500">Me</span></p>
-      <div className=" flex">
+    <section id='About' className="text-white w-full bg-zinc-800 p-5 md:py-14 md:px-28  flex flex-col h-full">
+      <p className="font-nunito-sans text-white text-2xl font-bold mb-6 text-center md:text-4xl md:mb-14">About <span className="text-blue-500">Me</span></p>
+      <div className=" flex flex-col md:flex-row justify-center items-center">
         {/* IMAGE */}
-        <div className="h-full w-2/5 flex items-center justify-center ">
-          <div className="relative bg-zinc-700 w-[30rem] h-[30rem] rounded-lg">
-            <img src="/Images/About/person-icon.png" className="w-96 absolute bottom-0 left-1/2 transform -translate-x-1/2" />
+        <div className="md:h-full w-56 md:w-2/5 mb-7 flex items-center justify-center md:mb-0">
+          <div className="relative bg-zinc-700 h-[16rem] w-[30rem] md:h-[30rem] rounded-lg">
+            <img src="/Images/About/person-icon.png" className="w-52 md:w-96 absolute bottom-0 left-1/2 transform -translate-x-1/2" />
           </div>
         </div>
         {/* CONTENT */}
-        <div className="h-full w-3/5 px-5">
-          <p className="text-white text-lg font-nunito-sans mb-5">Hi, I'm <span className="text-blue-500 font-bold">Mark Anthony</span>, a 23-year-old <span className="text-blue-500 font-bold">Software Developer</span> passionate about crafting innovative solutions through code. With a strong background in software development, I thrive on designing, developing, and optimizing applications that solve real-world problems. My skill set includes various programming languages, frameworks, and technologies that I use to bring ideas to life efficiently and creatively.
+        <div className="h-full  md:w-3/5 px-5">
+          <p className="text-white text-sm font-nunito-sans mb-5 md:text-lg">Hi, I'm <span className="text-blue-500 font-bold">Mark Anthony</span>, a 23-year-old <span className="text-blue-500 font-bold">Software Developer</span> passionate about crafting innovative solutions through code. With a strong background in software development, I thrive on designing, developing, and optimizing applications that solve real-world problems. My skill set includes various programming languages, frameworks, and technologies that I use to bring ideas to life efficiently and creatively.
             Whether it's building applications from scratch, improving performance, or exploring new tech trends, I'm always eager to learn, grow, and contribute to meaningful projects.
           </p>
           <div className="flex py-4 font-nunito-sans ">
