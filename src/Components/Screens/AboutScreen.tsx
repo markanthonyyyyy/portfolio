@@ -1,7 +1,22 @@
 
 const AboutScreen = () => {
 
-  const Skills = ['JavaScript', 'Java', 'PHP', 'HTML', 'CSS', 'React', 'React Native', 'Android Studio', 'Laravel', 'Inertia', 'Tailwind CSS', 'Git'];
+  const Skills = [
+    { name: 'JavaScript', url: 'https://en.wikipedia.org/wiki/JavaScript'},
+    { name: 'Java', url: 'https://www.java.com/en/'},
+    { name: 'PHP', url: 'https://www.php.net/'},
+    { name: 'HTML', url: 'https://en.wikipedia.org/wiki/HTML'},
+    { name: 'CSS', url: 'https://en.wikipedia.org/wiki/CSS'},
+    { name: 'React', url: 'https://react.dev/'},
+    { name: 'React Native', url: 'https://reactnative.dev/'},
+    { name: 'Android Studio', url: 'https://developer.android.com/'},
+    { name: 'Laravel', url: 'https://laravel.com/'},
+    { name: 'Inertia', url: 'https://inertiajs.com/'},
+    { name: 'Livewire', url: 'https://laravel-livewire.com/'},
+    { name: 'Tailwind CSS', url: 'https://tailwindcss.com/'},
+    { name: 'Bootstrap', url: 'https://getbootstrap.com/'},
+    { name: 'Git', url: 'https://github.com/'}
+];
 
 
   return (
@@ -50,10 +65,12 @@ const AboutScreen = () => {
           {/* SKILLS CONTAINER */}
           <div className="mt-10 flex flex-wrap gap-2" data-aos="fade-left" data-aos-delay="1100">
             {Skills.map((item, index) => (
-              <div key={index} className="text-blue-300 font-semibold border md:border-2 text-sm md:text-base border-blue-300 w-fit py-2 px-3 rounded-lg">
-                  {item}
-              </div>
-            ) )}
+              <a href={item.url} target="_blank">
+                <div key={index} className="text-blue-300 items-center justify-center font-semibold border md:border-2 text-sm md:text-base border-blue-300 w-fit py-2 px-3 rounded-lg">
+                    <p>{item.name}</p>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
