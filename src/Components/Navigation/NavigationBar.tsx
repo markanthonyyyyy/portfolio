@@ -6,7 +6,7 @@ const NavigationBar = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [selected, setSelected] = useState('Home');
-    const [title, setTitle] = useState('Ally Dev | Home');
+    const [title, setTitle] = useState('Mark Anthony | Home');
     
     useEffect(()=> {
         document.title = title;
@@ -47,7 +47,7 @@ const NavigationBar = () => {
 
             if (top >= ScrollOffset && top < ScrollOffset + height && id) {
                 setSelected(id);
-                setTitle('Ally Dev | ' + id)
+                setTitle('Mark Anthony | ' + id)
             }
 
         })
@@ -131,8 +131,8 @@ const NavigationBar = () => {
             <div className={`flex h-14 px-5 py-5 border-b w-full items-center border-zinc-700 bg-radial-gradient-gray fixed top-0 z-10 transition-transform duration-500 md:h-20 md:px-10 ${showNavigation ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
                 <div className="w-1/2 flex items-center transition-all duration-500 ease-in-out">
                     <img src="/Images/Navigation/sample-logo.png" className="w-5 h-auto object-contain scale-100 transition-scale duration-500 cursor-pointer  hover:scale-125 md:w-10" onClick={() => {handleSelected('Home'); handleNavItemClicked('Home');}}/>
-                    <span className="ml-2 text-white font-nunito-sans font-bold transition-all duration-500 ease-in-out md:ml-5 md:text-2xl">Ally</span>
-                    <span className="ml-1 text-blue-500 font-nunito-sans font-bold transition-all duration-500 ease-in-out md:text-2xl">Dev</span>
+                    <span className="ml-2 text-white font-nunito-sans font-bold transition-all duration-500 ease-in-out md:ml-5 md:text-2xl">Mark</span>
+                    <span className="ml-1 text-blue-500 font-nunito-sans font-bold transition-all duration-500 ease-in-out md:text-2xl">Anthony</span>
                 </div>
                 <div className="w-1/2 flex justify-end items-center  transition-all duration-500 ease-in-out">
                     <nav className="opacity-0 md:opacity-100 transition-opacity duration-500 ease-in flex items-center">

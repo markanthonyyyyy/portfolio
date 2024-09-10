@@ -44,7 +44,7 @@ const Footer = () => {
         <div className="bg-radial-gradient-gray w-full h-auto  border-zinc-500 flex flex-col">
             <div className="flex flex-col md:flex-row">
                 <div className="h-full p-8 w-full md:p-12 md:w-2/5">
-                    <div className="text-white font-nunito-sans font-bold text-2xl md:text-4xl">Ally <span className="font-nunito-sans text-blue-500 font-bold">Dev</span></div>
+                    <div className="text-white font-nunito-sans font-bold text-2xl md:text-4xl">Mark <span className="font-nunito-sans text-blue-500 font-bold">Anthony</span></div>
                     <div className="mt-4 font-nunito-sans text-white text-sm md:text-base">Thank you for visiting my website! I appreciate you taking the time to explore my work. If you have any questions or would like to collaborate on a project, feel free to reach out. Let's stay connected!</div>
                     <div className="flex items-center mt-5"> 
                         <img src="/Images/Footer/email-icon.png" className={`w-6 md:w-8 h-auto object-contain mr-2`}/>
@@ -73,7 +73,7 @@ const Footer = () => {
             <footer className="bg-transparent items-center flex justify-center text-white flex-col">
                 <div className="w-full h-[1.5px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                 <div className="font-nunito-sans text-xs md:text-sm font-medium p-3 ">
-                    © {currentYear} All Rights Reserved - Ally Dev
+                    © {currentYear} All Rights Reserved - Mark Anthony
                 </div>
             </footer>
         </div>
